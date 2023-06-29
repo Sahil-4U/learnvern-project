@@ -1,10 +1,8 @@
 import React from 'react';
 import './Subscription.css';
 
-function Subscription() {
-    let date = new Date('2023', '06', '29');
-    let title = 'Monthly subscription';
-    let amount = '124.90';
+function Subscription({ date, amount, title }) {
+
     return (
         <div className='subscription'>
             <div>{date.toISOString()}</div>
