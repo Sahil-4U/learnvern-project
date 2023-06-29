@@ -1,12 +1,13 @@
 import './App.css';
+import Subscription from './components/Subscription';
 
 function App() {
   return (
-    <center>
-      <h3>
-        hellow react
-      </h3>
-    </center>
+    <div className='App'>
+      <header className='App-header'>
+        <Subscription />
+      </header>
+    </div>
   );
 }
 
