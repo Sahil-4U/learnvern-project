@@ -1,6 +1,6 @@
 import './App.css';
-import Container from './components/Container';
-import Subscription from './components/Subscription';
+import Container from './templates/Container';
+import Subscription from './subscriptions/Subscription';
 
 function App() {
   let subscriptions = [

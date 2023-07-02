@@ -1,7 +1,7 @@
 import React from 'react';
 import './Subscription.css';
 import SubscriptionDate from './SubscriptionDate';
-import Container from './Container';
+import Container from '../templates/Container';
 
 function Subscription({ date, amount, title }) {
 
