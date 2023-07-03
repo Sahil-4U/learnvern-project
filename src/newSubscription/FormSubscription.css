@@ -1,0 +1,54 @@
+form {
+  width: 50em;
+  height: 24em;
+  margin: auto;
+  border-radius: 1em;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: skyblue;
+}
+.new_subscription_controls {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.new_subscription_control {
+  display: flex;
+  align-items: center;
+}
+.new_subscription_control > label {
+  margin: 1rem;
+  font-size: 2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.new_subscription_control input {
+  width: 12rem;
+  height: 2em;
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  box-shadow: -1px -1px 4px 0.1px #fff;
+  text-align: center;
+}
+.new_subscription_actions {
+  margin: auto;
+}
+.new_subscription_actions button {
+  width: 12em;
+  height: 2em;
+  font-size: 1.4em;
+  border-radius: 2em;
+  border: 1px blueviolet dashed;
+  color: red;
+  font-family: cursive;
+  font-weight: 1em;
+}
+.new_subscription_actions button:hover {
+  background: red;
+  color: white;
+  border: 1px white dashed;
+}
