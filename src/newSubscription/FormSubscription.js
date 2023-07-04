@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './FormSubscription.css'
 
-function FormSubscription() {
+function FormSubscription({ onSave }) {
     const [form, setForm] = useState({ title: '', date: '', amount: '' });
     const handleTitle = (event) => {
         setForm((prevState) => {
@@ -18,12 +18,15 @@ function FormSubscription() {
             return { ...prevState, amount: event.target.value };
         })
     }
-    const handleClick = () => {
-        console.log(form);
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const Subscription = { title: form.title, date: new Date(form.date), amount: form.amount };
+        onSave(Subscription);
+        setForm({ title: '', date: '', amount: '' });
     }
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <div className='new_subscription_controls'>
                 <div className='new_subscription_control'>
                     <label>Title</label>
@@ -39,7 +42,7 @@ function FormSubscription() {
                 </div>
             </div>
             <div className='new_subscription_actions'>
-                <button type='button' onClick={handleClick}>Click me </button>
+                <button type='submit'>Click me </button>
             </div>
         </form>
     )

@@ -1,5 +1,4 @@
 import './App.css';
-import Container from './templates/Container';
 import Subscription from './subscriptions/Subscription';
 import NewSubscription from './newSubscription/NewSubscription';
 
@@ -24,12 +23,18 @@ function App() {
       amount: '924.90',
     }
   ]
+  const addNewSubscription = (data) => {
+    subscriptions.push(data);
+    console.log("app.js", data, subscriptions);
+  }
   return (
     <div>
-      <NewSubscription />
-      <Subscription date={subscriptions[0].date} title={subscriptions[0].title} amount={subscriptions[0].amount} />
-      <Subscription date={subscriptions[1].date} title={subscriptions[1].title} amount={subscriptions[1].amount} />
-      <Subscription date={subscriptions[2].date} title={subscriptions[2].title} amount={subscriptions[2].amount} />
+      <NewSubscription addNewSubscription={addNewSubscription} />
+      {subscriptions.map((data) => {
+        return (
+          <Subscription date={data.date} title={data.title} amount={data.amount} />
+        )
+      })}
     </div>
 
 
