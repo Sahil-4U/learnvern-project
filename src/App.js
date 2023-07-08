@@ -14,13 +14,13 @@ function App() {
   },
   {
     id: '2',
-    date: new Date('2024', '06', '29'),
+    date: new Date('2020', '06', '29'),
     title: 'Yearly subscription',
     amount: '154.90',
   },
   {
     id: '3',
-    date: new Date('2025', '06', '29'),
+    date: new Date('2021', '06', '29'),
     title: 'Quartly subscription',
     amount: '924.90',
   }]
@@ -39,11 +39,17 @@ function App() {
     <div>
       <NewSubscription addNewSubscription={addNewSubscription} />
       <Filter filteredData={filteredData} valueOfFilter={filtered} />
-      {filteredArray.map((data) => {
+      {filteredArray.length === 0 ? <center><h1 style={{ color: 'darkBlue', border: '1px dashed red' }}>No Subscriptions for this year</h1></center> : filteredArray.map((data) => {
         return (
           <Subscription key={data.id} date={data.date} title={data.title} amount={data.amount} />
         )
       })}
+      {/* 2nd approach */}
+      {/* {filteredArray.length === 0 && <center><h1 style={{ color: 'darkBlue', border: '1px dashed red' }}>No Subscriptions for this year</h1></center> || filteredArray.map((data) => {
+        return (
+          <Subscription key={data.id} date={data.date} title={data.title} amount={data.amount} />
+        )
+      })} */}
     </div>
 
 
