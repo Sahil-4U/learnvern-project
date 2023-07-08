@@ -1,5 +1,4 @@
 import './App.css';
-import Subscription from './subscriptions/Subscription';
 import NewSubscription from './newSubscription/NewSubscription';
 import Filter from './subscriptions/Filter';
 import { useState } from 'react';

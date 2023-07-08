@@ -30,15 +30,15 @@ function FormSubscription({ onSave }) {
             <div className='new_subscription_controls'>
                 <div className='new_subscription_control'>
                     <label>Title</label>
-                    <input type='text' onChange={handleTitle} value={form.title} />
+                    <input type='text' onChange={handleTitle} value={form.title} required />
                 </div>
                 <div className='new_subscription_control'>
                     <label>Date</label>
-                    <input type='date' onChange={handleDate} value={form.date} />
+                    <input type='date' onChange={handleDate} value={form.date} required />
                 </div>
                 <div className='new_subscription_control'>
                     <label>Amount</label>
-                    <input type='number' min='10' max='5000' onChange={handleAmount} value={form.amount} />
+                    <input type='number' min='10' max='5000' onChange={handleAmount} value={form.amount} required />
                 </div>
             </div>
             <div className='new_subscription_actions'>
