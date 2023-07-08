@@ -18,3 +18,12 @@ setForm((prevState) => {
 return { ...prevState, title: event.target.value };
 })
 }
+
+5. Conditional rendering
+   i)&& , ||
+   ii) <condition> ? <template> : <2nd template>
+   iii) if(condition){
+   <output>
+   }else{
+   2nd <output>
+   }

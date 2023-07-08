@@ -3,6 +3,7 @@ import Subscription from './subscriptions/Subscription';
 import NewSubscription from './newSubscription/NewSubscription';
 import Filter from './subscriptions/Filter';
 import { useState } from 'react';
+import SubscriptionList from './subscriptions/SubscriptionList';
 
 function App() {
   const [filtered, setFiltered] = useState('2021');
@@ -35,19 +36,28 @@ function App() {
   const filteredArray = subscriptions.filter((data) => {
     return data.date.getFullYear().toString() === filtered;
   })
-  let connect = <center><h1 style={{ color: 'darkBlue', border: '1px dashed red' }}>No Subscriptions for this year</h1></center>;
-  if (filteredArray.length != 0) {
-    connect = filteredArray.length === 0 ? <center><h1 style={{ color: 'darkBlue', border: '1px dashed red' }}>No Subscriptions for this year</h1></center> : filteredArray.map((data) => {
-      return (
-        <Subscription key={data.id} date={data.date} title={data.title} amount={data.amount} />
-      )
-    });
-  }
+  // let connect = <center><h1 style={{ color: 'darkBlue', border: '1px dashed red' }}>No Subscriptions for this year</h1></center>;
+  // if (filteredArray.length != 0) {
+  //   connect = filteredArray.length === 0 ? <center><h1 style={{ color: 'darkBlue', border: '1px dashed red' }}>No Subscriptions for this year</h1></center> : filteredArray.map((data) => {
+  //     return (
+  //       <Subscription key={data.id} date={data.date} title={data.title} amount={data.amount} />
+  //     )
+  //   });
+  // }
   return (
     <div>
+
+
+
       <NewSubscription addNewSubscription={addNewSubscription} />
       <Filter filteredData={filteredData} valueOfFilter={filtered} />
-      {connect}
+      <SubscriptionList filteredData={filteredArray} />
+
+
+
+
+
+
       {/* {filteredArray.length === 0 ? <center><h1 style={{ color: 'darkBlue', border: '1px dashed red' }}>No Subscriptions for this year</h1></center> : filteredArray.map((data) => {
         return (
           <Subscription key={data.id} date={data.date} title={data.title} amount={data.amount} />
