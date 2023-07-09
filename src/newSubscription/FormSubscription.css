@@ -1,7 +1,7 @@
 form {
   width: 50em;
   height: 24em;
-  margin: auto;
+  margin: 1% auto;
   border-radius: 1em;
   display: flex;
   justify-content: flex-start;
@@ -28,7 +28,6 @@ form {
 .new_subscription_control input {
   width: 12rem;
   height: 2em;
-  border-radius: 1rem;
   border: none;
   outline: none;
   box-shadow: -1px -1px 4px 0.1px #fff;
@@ -41,7 +40,7 @@ form {
   width: 12em;
   height: 2em;
   font-size: 1.4em;
-  border-radius: 2em;
+  border-radius: 0.4em;
   border: 1px blueviolet dashed;
   color: red;
   font-family: cursive;

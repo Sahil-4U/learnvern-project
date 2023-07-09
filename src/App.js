@@ -3,6 +3,7 @@ import NewSubscription from './newSubscription/NewSubscription';
 import Filter from './subscriptions/Filter';
 import { useState } from 'react';
 import SubscriptionList from './subscriptions/SubscriptionList';
+import SubscriptionChart from './subscriptions/SubscriptionChart';
 
 function App() {
   const [filtered, setFiltered] = useState('2021');
@@ -23,7 +24,7 @@ function App() {
     date: new Date('2021', '06', '29'),
     title: 'Quartly subscription',
     amount: '924.90',
-  }]
+  }];
   const [subscriptions, setSubscriptions] = useState(INITIAL_SUBSCRIPTION);
   const addNewSubscription = (data) => {
     setSubscriptions(prev => [data, ...subscriptions]);
@@ -50,6 +51,7 @@ function App() {
 
       <NewSubscription addNewSubscription={addNewSubscription} />
       <Filter filteredData={filteredData} valueOfFilter={filtered} />
+      <SubscriptionChart filteredData={filteredArray} />
       <SubscriptionList filteredData={filteredArray} />
 
 
