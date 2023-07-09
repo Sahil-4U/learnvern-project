@@ -8,7 +8,12 @@ function Chart({ datasets }) {
     return (
         <div className='chart'>
             {
-                datasets.map((data) => { return (<Chartbar value={data.value} label={data.label} key={data.label} maxValue={maxVal} />) })
+                datasets.map((data) => {
+                    return (<Chartbar value={data.value}
+                        label={data.label} key={data.label}
+                        maxValue={maxVal}
+                    />)
+                })
             }
         </div>
     )
