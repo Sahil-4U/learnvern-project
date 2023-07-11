@@ -15,7 +15,7 @@ function NewSubscription({ addNewSubscription }) {
     return (
         <div className='new_subscription'>
             {showform && <FormSubscription onSave={onSaveHandler} hideform={setShowForm} />}
-            <div className='text-end m-3' ><Button variant='outline-warning' onClick={showformHandler}>Add new</Button></div>
+            <div className='text-end m-3' ><Button variant='outline-warning' onClick={showformHandler}>{!showform ? 'Add New' : 'Close'}</Button></div>
         </div>
     )
 }
