@@ -5,7 +5,7 @@ function Chartbar({ value, label, maxValue }) {
     let barHeight = '0%';
     const sum = value / maxValue;
     if (maxValue > 0) {
-        barHeight = Math.round((sum) * 100) + '%'
+        barHeight = Math.round((sum) * 100) + '%';
         // console.log('label', label, barHeight, value);
     }
     return (

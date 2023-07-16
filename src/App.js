@@ -6,7 +6,7 @@ import SubscriptionList from './subscriptions/SubscriptionList';
 import SubscriptionChart from './subscriptions/SubscriptionChart';
 
 function App() {
-  const [filtered, setFiltered] = useState('2021');
+  const [filtered, setFiltered] = useState(localStorage.getItem('filteredYear') || '2021');
   const INITIAL_SUBSCRIPTION = [{
     id: '1',
     date: new Date('2023', '06', '29'),
@@ -32,6 +32,7 @@ function App() {
   }
   const filteredData = (data) => {
     setFiltered(data);
+    localStorage.setItem('filteredYear', data);
   }
   const filteredArray = subscriptions.filter((data) => {
     return data.date.getFullYear().toString() === filtered;
