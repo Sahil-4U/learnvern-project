@@ -4,6 +4,7 @@ import Filter from './subscriptions/Filter';
 import { useState } from 'react';
 import SubscriptionList from './subscriptions/SubscriptionList';
 import SubscriptionChart from './subscriptions/SubscriptionChart';
+import SubscriptionContext from './store/subscriptions-component';
 
 function App() {
   const [filtered, setFiltered] = useState(localStorage.getItem('filteredYear') || '2021');
@@ -45,6 +46,7 @@ function App() {
   //     )
   //   });
   // }
+
   return (
     <div>
 
@@ -52,9 +54,11 @@ function App() {
 
       <NewSubscription addNewSubscription={addNewSubscription} />
       <Filter filteredData={filteredData} valueOfFilter={filtered} />
-      <SubscriptionChart filteredData={filteredArray} />
-      <SubscriptionList filteredData={filteredArray} />
 
+      <SubscriptionContext.Provider value={{ filteredArray }}>
+        <SubscriptionChart />
+        <SubscriptionList />
+      </SubscriptionContext.Provider>
 
 
 

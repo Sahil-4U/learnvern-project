@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './SubscriptionChart.css';
 import Chart from '../templates/charts/Chart';
+import SubscriptionContext from '../store/subscriptions-component';
 
-function SubscriptionChart({ filteredData }) {
+function SubscriptionChart() {
+    const { filteredArray: filteredData } = useContext(SubscriptionContext);
     const chartData = [
         { label: 'Jan', value: 0 },
         { label: 'Feb', value: 0 },
