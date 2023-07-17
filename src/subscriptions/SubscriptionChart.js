@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './SubscriptionChart.css';
 import Chart from '../templates/charts/Chart';
-import SubscriptionContext from '../store/subscriptions-component';
 
-function SubscriptionChart() {
-    const { filteredArray: filteredData } = useContext(SubscriptionContext);
+function SubscriptionChart({ filteredDataa }) {
+    // console.log('filtered data', filteredData);
     const chartData = [
         { label: 'Jan', value: 0 },
         { label: 'Feb', value: 0 },
@@ -19,7 +18,7 @@ function SubscriptionChart() {
         { label: 'Nov', value: 0 },
         { label: 'Dec', value: 0 },
     ]
-    for (const subscription of filteredData) {
+    for (const subscription of filteredDataa) {
         const month = subscription.date.getMonth();
         chartData[month].value += subscription.amount;
     }
@@ -28,4 +27,4 @@ function SubscriptionChart() {
     )
 }
 
-export default SubscriptionChart
+export default SubscriptionChart;

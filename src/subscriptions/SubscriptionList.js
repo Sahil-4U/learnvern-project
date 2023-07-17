@@ -1,14 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Subscription from './Subscription';
-import SubscriptionContext from '../store/subscriptions-component';
 
-function SubscriptionList() {
-    const { filteredArray: filteredData } = useContext(SubscriptionContext);
+function SubscriptionList({ filteredDataa }) {
 
-    if (filteredData.length === 0) return <center><h1 style={{ color: 'darkBlue', border: '1px dashed red' }}>No Subscriptions for this year</h1></center>
+    if (filteredDataa.length === 0) return <center><h1 style={{ color: 'darkBlue', border: '1px dashed red' }}>No Subscriptions for this year</h1></center>
     return (
         <div style={{ margin: '1%' }}>
-            {filteredData.map((data) => {
+            {filteredDataa.map((data) => {
                 return (
                     <Subscription key={data.id} date={data.date} title={data.title} amount={data.amount} />
                 )
