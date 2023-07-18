@@ -27,4 +27,4 @@ function SubscriptionChart({ filteredDataa }) {
     )
 }
 
-export default SubscriptionChart;
+export default React.memo(SubscriptionChart);

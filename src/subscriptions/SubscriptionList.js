@@ -16,4 +16,4 @@ function SubscriptionList({ filteredDataa }) {
     )
 }
 
-export default SubscriptionList;
+export default React.memo(SubscriptionList);
